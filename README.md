@@ -57,6 +57,17 @@ Version 1.10.9
 - Allow emojis in the folder path
 - Fixed bugs
 
+Version 1.11.0
+- Merged [added aspect ratio parameter for graphs](https://github.com/pyrochlore/obsidian-tracker/pull/124)
+- Merged [Update TestXDataset.md](https://github.com/pyrochlore/obsidian-tracker/pull/127)
+- Merged [Fix link to scaling/positioning docs](https://github.com/pyrochlore/obsidian-tracker/pull/158)
+- Merged [Parse booleans from the frontmatter (fixes #79)](https://github.com/pyrochlore/obsidian-tracker/pull/160)
+- Merged [Fix a typo](https://github.com/pyrochlore/obsidian-tracker/pull/166)
+- Merged [Fix table formatting of margin row](https://github.com/pyrochlore/obsidian-tracker/pull/177)
+- Merged [Fix searchType: task](https://github.com/pyrochlore/obsidian-tracker/pull/209)
+- Merged [Update Questions.md](https://github.com/pyrochlore/obsidian-tracker/pull/217)
+- Merged [Rename TestMultipleTargesMultipleValues.md to TestMultipleTargetsMultipleValues.md](https://github.com/pyrochlore/obsidian-tracker/pull/239)
+
 ## !!! Breaking Changes !!!
 
 From version 1.9.0, template variables, e.g. '{{sum}}', are deprecated. Instead, Tracker provide operators (+, -, *, /, %) and functions (dataset(), sum(), maxStreak(), ......etc) to help us do data processing. For users having code blocks from previous version, please replace '{{sum}}' by '{{sum()}}' or '{{sum(1)}}' by '{{sum(dataset(1))}}'. More information about the new expressions could be found [here](https://github.com/lazyguru/obsidian-tracker/blob/master/docs/Expressions.md).
