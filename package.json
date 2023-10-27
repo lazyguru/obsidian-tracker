@@ -1,6 +1,6 @@
 {
-  "name": "lazyguru-obsidian-tracker",
-  "version": "1.11.0",
+  "name": "obsidian-tracker",
+  "version": "1.11.1",
   "description": "A plugin tracks occurrences and numbers in your notes",
   "main": "main.js",
   "scripts": {
@@ -10,6 +10,11 @@
   },
   "keywords": [],
   "author": "pyrochlore",
+  "contributors": [
+    {
+      "author": "lazyguru"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
