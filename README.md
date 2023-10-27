@@ -58,15 +58,15 @@ Version 1.10.9
 - Fixed bugs
 
 Version 1.11.0
-- Merged [added aspect ratio parameter for graphs](https://github.com/pyrochlore/obsidian-tracker/pull/124)
-- Merged [Update TestXDataset.md](https://github.com/pyrochlore/obsidian-tracker/pull/127)
-- Merged [Fix link to scaling/positioning docs](https://github.com/pyrochlore/obsidian-tracker/pull/158)
-- Merged [Parse booleans from the frontmatter (fixes #79)](https://github.com/pyrochlore/obsidian-tracker/pull/160)
+- Merged [added aspect ratio parameter for graphs](https://github.com/pyrochlore/obsidian-tracker/pull/239)
+- Merged [Update TestXDataset.md](https://github.com/pyrochlore/obsidian-tracker/pull/217)
+- Merged [Fix link to scaling/positioning docs](https://github.com/pyrochlore/obsidian-tracker/pull/209)
+- Merged [Parse booleans from the frontmatter (fixes #79)](https://github.com/pyrochlore/obsidian-tracker/pull/177)
 - Merged [Fix a typo](https://github.com/pyrochlore/obsidian-tracker/pull/166)
-- Merged [Fix table formatting of margin row](https://github.com/pyrochlore/obsidian-tracker/pull/177)
-- Merged [Fix searchType: task](https://github.com/pyrochlore/obsidian-tracker/pull/209)
-- Merged [Update Questions.md](https://github.com/pyrochlore/obsidian-tracker/pull/217)
-- Merged [Rename TestMultipleTargesMultipleValues.md to TestMultipleTargetsMultipleValues.md](https://github.com/pyrochlore/obsidian-tracker/pull/239)
+- Merged [Fix table formatting of margin row](https://github.com/pyrochlore/obsidian-tracker/pull/160)
+- Merged [Fix searchType: task](https://github.com/pyrochlore/obsidian-tracker/pull/157)
+- Merged [Update Questions.md](https://github.com/pyrochlore/obsidian-tracker/pull/127)
+- Merged [Rename TestMultipleTargesMultipleValues.md to TestMultipleTargetsMultipleValues.md](https://github.com/pyrochlore/obsidian-tracker/pull/124)
 
 ## !!! Breaking Changes !!!
 
@@ -76,7 +76,7 @@ From version 1.9.0, template variables, e.g. '{{sum}}', are deprecated. Instead,
 
 1. Have some targets you want to track in daily notes.
 2. Add a new note for displaying the tracker.
-3. Add tracker code blocks manually ([examples](https://github.com/lazyguru/obsidian-tracker/tree/master/examples)) or using [commands](https://github.com/pyrochlore/obsidian-tracker/blob/master/docs/Commands.md).
+3. Add tracker code blocks manually ([examples](https://github.com/lazyguru/obsidian-tracker/tree/master/examples)) or using [commands](https://github.com/lazyguru/obsidian-tracker/blob/master/docs/Commands.md).
 4. Switch the document view mode to 'Preview', then the code block will get rendered.
 
 For more use cases, please download and open the [examples](https://github.com/lazyguru/obsidian-tracker/tree/master/examples) folder in obsidian with this plugin installed and enabled.
