@@ -8,7 +8,8 @@ To see examples of `bullet` and `pie`, please check [bullet examples](https://gi
 ### number and number
 
 number \+ number --> number
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -21,7 +22,8 @@ summary:
 ### Dataset and number
 
 Dataset \+ number --> Dataset
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -32,7 +34,8 @@ summary:
 ```
 
 Dataset \- number --> Dataset
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -43,7 +46,8 @@ summary:
 ```
 
 Dataset \* number --> Dataset
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -54,7 +58,8 @@ summary:
 ```
 
 Dataset / number --> Dataset
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -65,7 +70,8 @@ summary:
 ```
 
 Dataset % number --> Dataset
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -79,7 +85,8 @@ summary:
 
 Dataset1 \+ Dataset2 --> Dataset
 ==> Dataset[i] = Dataset1[i] + Dataset2[i]
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -96,7 +103,8 @@ summary:
 ### Functions Accept Dataset and Return a Value
 
 min(Dataset): number
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -106,7 +114,8 @@ summary:
 ```
 
 minDate(Dataset): Date
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -116,7 +125,8 @@ summary:
 ```
 
 max(Dataset): number
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -126,7 +136,8 @@ summary:
 ```
 
 maxDate(Dataset): Date
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -136,7 +147,8 @@ summary:
 ```
 
 startDate(Dataset): Date
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -146,7 +158,8 @@ summary:
 ```
 
 endDate(Dataset): Date
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -156,7 +169,8 @@ summary:
 ```
 
 sum(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -166,7 +180,8 @@ summary:
 ```
 
 numTargets(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -176,7 +191,8 @@ summary:
 ```
 
 numDays(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -186,7 +202,8 @@ summary:
 ```
 
 numDaysHavingData(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -196,7 +213,8 @@ summary:
 ```
 
 maxStreak(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -206,7 +224,8 @@ summary:
 ```
 
 maxStreakStart(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -216,7 +235,8 @@ summary:
 ```
 
 maxStreakEnd(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -226,7 +246,8 @@ summary:
 ```
 
 maxBreaks(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -236,7 +257,8 @@ summary:
 ```
 
 maxBreaksStart(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -246,7 +268,8 @@ summary:
 ```
 
 maxBreaksEnd(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -256,7 +279,8 @@ summary:
 ```
 
 currentStreak(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -266,7 +290,8 @@ summary:
 ```
 
 currentStreakStart(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -276,7 +301,8 @@ summary:
 ```
 
 currentStreakEnd(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -286,7 +312,8 @@ summary:
 ```
 
 currentBreaks(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -296,7 +323,8 @@ summary:
 ```
 
 currentBreaksStart(Dataset): number
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -306,7 +334,8 @@ summary:
 ```
 
 currentBreaksEnd(Dataset): Date
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -317,7 +346,8 @@ summary:
 
 average(Dataset): number
 (48+25+12)/3 = 28.33
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -327,7 +357,8 @@ summary:
 ```
 
 median(Dataset): number
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -338,7 +369,8 @@ summary:
 
 variance(Dataset): number
 https://mathworld.wolfram.com/SampleVariance.html
-``` tracker
+
+```tracker
 searchType: dvField
 searchTarget: dataviewTarget
 folder: /diary
@@ -350,17 +382,19 @@ summary:
 ### Functions Accept Dataset and Return a Dataset
 
 normalize(Dataset): Dataset
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
 endDate: 2021-01-04
 summary:
-    template: 'Set missing values to -1, do normalization then do summation: {{sum( normalize( setMissingValues(dataset(0), -1) ) )::i}} <-- sgiydk be 3'
+    template: 'Set missing values to -1, do normalization then do summation: {{sum( normalize( setMissingValues(dataset(0), -1) ) )::i}} <-- should be 3'
 ```
 
 setMissingValues(Dataset): Dataset
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: meditation
 folder: /diary
@@ -368,4 +402,3 @@ endDate: 2021-01-04
 summary:
     template: 'Set missing values to -1 then do summation: {{sum( setMissingValues( dataset(0), -1 ) )::i}} <-- should be 2'
 ```
-

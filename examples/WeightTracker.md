@@ -1,6 +1,6 @@
 # Weight Tracker
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: weight
 folder: diary
@@ -16,7 +16,8 @@ line:
 ```
 
 ## Summary
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: weight
 folder: diary
@@ -24,7 +25,7 @@ summary:
     template: "Minimum: {{min()}}kg\nMaximum: {{max()}}kg\nMedian: {{median()}}kg\nAverage: {{average()}}kg"
 ```
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: weight
 folder: diary
@@ -37,12 +38,3 @@ line:
 ```
 
 Please also check those search targets in markdown files under folder 'diary'.
-
-
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 ## Multiple Lines
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: weight
 folder: diary
@@ -12,7 +12,7 @@ summary:
 
 ## Styling
 
-``` tracker
+```tracker
 searchType: text
 searchTarget: ⭐
 folder: diary

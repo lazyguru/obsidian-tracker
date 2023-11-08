@@ -1,7 +1,10 @@
-# Test Scaling and Positioning
-## Scaling the chart
+# Scaling, Width, Positioning, and Aspect Ratios
+
+## Scaling
+
 Scaling factor 0.5
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -15,7 +18,8 @@ line:
 ```
 
 Scaling factor 1.5
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -28,8 +32,9 @@ line:
     lineColor: "#d65d0e"
 ```
 
-## Fitting the chart to the panel width
-``` tracker
+## Width
+
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -42,9 +47,11 @@ line:
     lineColor: "#d65d0e"
 ```
 
-## Chart Positioning
+## Positioning
+
 margin: top right bottom left
-``` tracker
+
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -58,7 +65,7 @@ line:
     lineColor: "#d65d0e"
 ```
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -72,7 +79,7 @@ line:
     lineColor: "#d65d0e"
 ```
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -86,7 +93,7 @@ line:
     lineColor: "#d65d0e"
 ```
 
-``` tracker
+```tracker
 searchType: tag
 searchTarget: exercise-pushup
 folder: diary
@@ -94,6 +101,22 @@ endDate: 2021-01-31
 fixedScale: 1.0
 fitPanelWidth: false
 margin: 10, 10, 10, 150
+line:
+    title: PushUp
+    yAxisLabel: Count
+    lineColor: "#d65d0e"
+```
+
+## Aspect Ratio
+
+aspectRatio 5:3
+```tracker
+searchType: tag
+searchTarget: exercise-pushup
+folder: diary
+endDate: 2021-01-31
+aspectRatio: 5:3
+fitPanelWidth: false
 line:
     title: PushUp
     yAxisLabel: Count

@@ -9,7 +9,8 @@ In the example notes, we have
 [[todo_work|To-Do @Work]]
 
 ## wiki.link
-``` tracker
+
+```tracker
 searchType: wiki.link
 searchTarget: todo_work
 folder: diary
@@ -20,7 +21,8 @@ summary:
 ```
 
 ## wiki.display
-``` tracker
+
+```tracker
 searchType: wiki.display
 searchTarget: To
 folder: diary
@@ -29,6 +31,5 @@ endDate: 2021-01-31
 summary:
     template: '{{sum()::i}}'
 ```
-
 
 Please also check those search targets in markdown files under folder 'diary'.

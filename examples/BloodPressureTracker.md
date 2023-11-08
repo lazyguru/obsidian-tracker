@@ -1,16 +1,14 @@
-
-
 # Blood Pressure Tracker
 
-``` tracker
+```tracker
 searchType: frontmatter
-searchTarget: bloodpressure[0], bloodpressure[1]
+searchTarget: bloodPressure[0], bloodPressure[1]
 datasetName: systolic, diastolic
 folder: diary
 startDate: 2021-01-01
 endDate: 2021-01-31
 line:
-    title: Blood Pressures
+    title: Blood Pressure
     yAxisLabel: BP
     yAxisUnit: mmHg
     lineColor: yellow, red
@@ -18,9 +16,9 @@ line:
     legendPosition: bottom
 ```
 
-``` tracker
+```tracker
 searchType: frontmatter
-searchTarget: bloodpressure[0], bloodpressure[1]
+searchTarget: bloodPressure[0], bloodPressure[1]
 datasetName: systolic, diastolic
 folder: diary
 startDate: 2021-01-01
@@ -29,15 +27,15 @@ summary:
     template: "Average: {{average(dataset(0))}}/{{average(dataset(1))}}"
 ```
 
-``` tracker
+```tracker
 searchType: frontmatter
-searchTarget: bloodpressure[0], bloodpressure[1]
+searchTarget: bloodPressure[0], bloodPressure[1]
 datasetName: systolic, diastolic
 folder: diary
 startDate: 2021-01-01
 endDate: 2021-01-31
 line:
-    title: Blood Pressures
+    title: Blood Pressure
     yAxisLabel: Systolic, Diastolic
     yAxisUnit: mmHg
     yMin: 150, 110

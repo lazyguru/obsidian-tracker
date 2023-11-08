@@ -1,7 +1,7 @@
-import typescript from '@rollup/plugin-typescript';
-import {nodeResolve} from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import copy from 'rollup-plugin-copy'
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: 'src/main.ts',
@@ -9,25 +9,28 @@ export default {
     dir: 'examples/.obsidian/plugins/obsidian-tracker',
     sourcemap: 'inline',
     format: 'cjs',
-    exports: 'default'
+    exports: 'default',
   },
   external: ['obsidian'],
   plugins: [
     typescript(),
-    nodeResolve({browser: true}),
+    nodeResolve({ browser: true }),
     commonjs(),
     copy({
       targets: [
-        { src: ['styles.css', 'manifest.json'], dest: 'examples/.obsidian/plugins/obsidian-tracker' }
-      ]
-    })
+        {
+          src: ['styles.css', 'manifest.json'],
+          dest: 'examples/.obsidian/plugins/obsidian-tracker',
+        },
+      ],
+    }),
   ],
-  onwarn: function(warning, warner){
-    if (warning.code === 'CIRCULAR_DEPENDENCY'){
-        if(warning.importer && warning.importer.startsWith('node_modules')){
-            return;
-        }
+  onwarn: (warning, warner) => {
+    if (warning.code === 'CIRCULAR_DEPENDENCY') {
+      if (warning.importer && warning.importer.startsWith('node_modules')) {
+        return;
+      }
     }
     warner(warning);
-  }
+  },
 };

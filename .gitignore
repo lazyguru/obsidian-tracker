@@ -1,6 +1,7 @@
 # Intellij
 *.iml
 .idea
+/.vscode/
 
 # npm
 node_modules
@@ -17,3 +18,6 @@ examples/*.js
 
 # examples for users
 examples/case
+
+.env
+.coverage
