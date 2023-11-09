@@ -1,5 +1,4 @@
-import { RenderInfo, Size, TextValueMap, Transform } from './data';
-import { TFile, TFolder, normalizePath } from 'obsidian';
+import { Size, TextValueMap, Transform } from './data';
 import { ValueType } from './data';
 import * as d3 from 'd3';
 import { Moment, Duration } from 'moment';

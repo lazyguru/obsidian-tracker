@@ -1,23 +1,15 @@
 import * as d3 from 'd3';
 import { Moment, Duration } from 'moment';
 import {
-  Datasets,
   DataPoint,
   RenderInfo,
   Dataset,
-  Size,
-  Transform,
   ChartElements,
   GraphType,
   ValueType,
   CommonChartInfo,
   LineInfo,
   BarInfo,
-  PieInfo,
-  SummaryInfo,
-  BulletInfo,
-  MonthInfo,
-  HeatmapInfo,
 } from './data';
 import * as pie from './pie';
 import * as summary from './summary';
@@ -179,12 +171,7 @@ function getYTickLabelFormat(
       function fnTickLabelFormat(value: number): string {
         const dayStart = window.moment('00:00', 'HH:mm', true);
         const tickTime = dayStart.add(value, 'seconds');
-        const format = tickTime.format(inTickLabelFormat);
-
-        const devHour = (value - yLower) / 3600;
-        const interleave = devHour % 2;
-
-        return format;
+        return tickTime.format(inTickLabelFormat);
       }
       return fnTickLabelFormat;
     } else {
@@ -211,8 +198,6 @@ function getYTickLabelFormat(
       return fnTickLabelFormat;
     }
   }
-
-  return null;
 }
 
 export function render(canvas: HTMLElement, renderInfo: RenderInfo) {
@@ -906,8 +891,6 @@ function renderBar(
   }
   barWidth = barWidth / totalNumOfBarSets;
 
-  const portionLeft = (currBarSet + 1) / totalNumOfBarSets;
-
   let yScale: any = null;
   if (yAxisLocation === 'left') {
     yScale = chartElements.leftYScale;
@@ -985,7 +968,6 @@ function renderLegend(
 
   // Get chart elements
   const svg = chartElements.svg;
-  const graphArea = chartElements.graphArea;
   const dataArea = chartElements.dataArea;
   const title = chartElements.title;
   const xAxis = chartElements.xAxis;
@@ -1674,10 +1656,9 @@ function renderBarChart(
 
 export function renderErrorMessage(canvas: HTMLElement, errorMessage: string) {
   // Remove graph not completed
-  const graph = d3.select(canvas).select('#svg').remove();
+  d3.select(canvas).select('#svg').remove();
 
-  const svg = d3
-    .select(canvas)
+  d3.select(canvas)
     .append('div')
     .text(errorMessage)
     .style('background-color', 'white')

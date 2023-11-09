@@ -1,11 +1,10 @@
-import { CachedMetadata, TFile, normalizePath } from 'obsidian';
+import { CachedMetadata, TFile } from 'obsidian';
 import {
   DataMap,
   Query,
   RenderInfo,
   XValueMap,
   QueryValuePair,
-  TableData,
   SearchType,
   ValueType,
 } from './data';
@@ -127,8 +126,6 @@ export function getDateFromTag(
   // Get date from '#tagName: date'
   // Inline value-attached tag only
 
-  const date = window.moment('');
-
   let tagName = query.getTarget();
   if (query.getParentTarget()) {
     tagName = query.getParentTarget(); // use parent tag name for multiple values
@@ -154,8 +151,6 @@ export function getDateFromText(
   // console.log("getDateFromText");
   // Get date from text using regex with value
 
-  const date = window.moment('');
-
   const strRegex = query.getTarget();
   // console.log(strTextRegex);
 
@@ -171,8 +166,6 @@ export function getDateFromDvField(
 ): Moment {
   // console.log("getDateFromDvField");
   // Get date form 'targetName:: date'
-
-  const date = window.moment('');
 
   let dvTarget = query.getTarget();
   if (query.getParentTarget()) {
@@ -286,7 +279,6 @@ export function getDateFromTask(
   // console.log("getDateFromTask");
   // Get date from '- [ ] regex with value' or '- [x] regex with value'
 
-  const date = window.moment('');
   const searchType = query.getType();
   // console.log(searchType);
 

@@ -1,16 +1,5 @@
 import { Moment } from 'moment';
-import {
-  Datasets,
-  DataPoint,
-  RenderInfo,
-  MonthInfo,
-  Dataset,
-  Size,
-  Transform,
-  ChartElements,
-  GraphType,
-  ValueType,
-} from './data';
+import { RenderInfo, MonthInfo, ChartElements, ValueType } from './data';
 import * as helper from './helper';
 import * as d3 from 'd3';
 

@@ -1,22 +1,9 @@
-import { Moment } from 'moment';
-import {
-  Datasets,
-  DataPoint,
-  RenderInfo,
-  PieInfo,
-  MonthInfo,
-  Dataset,
-  Size,
-  Transform,
-  ChartElements,
-  GraphType,
-  ValueType,
-} from './data';
+import { RenderInfo, PieInfo, ChartElements } from './data';
 import * as helper from './helper';
 import * as d3 from 'd3';
 import * as expr from './expr';
-import { pie } from 'd3';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function setChartScale(
   _canvas: HTMLElement,
   chartElements: ChartElements,
@@ -47,7 +34,8 @@ function createAreas(
   chartElements: ChartElements,
   canvas: HTMLElement,
   renderInfo: RenderInfo,
-  pieInfo: PieInfo
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _pieInfo: PieInfo
 ): ChartElements {
   // clean areas
   d3.select(canvas).select('#svg').remove();
@@ -153,7 +141,6 @@ function renderLegend(
 
   // Get chart elements
   const svg = chartElements.svg;
-  const graphArea = chartElements.graphArea;
   const dataArea = chartElements.dataArea;
   const title = chartElements.title;
 
@@ -195,7 +182,8 @@ function renderLegend(
     legendWidth =
       (2 * xSpacing + markerWidth) * numNames +
       xSpacing +
-      d3.sum(nameSizes, function (s, i) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      d3.sum(nameSizes, function (s, _i) {
         return s.width;
       });
     legendHeight = ySpacing + nameHeight;
@@ -274,13 +262,16 @@ function renderLegend(
       .enter()
       .append('circle')
       .attr('cx', firstMarkerX + markerWidth / 2.0)
-      .attr('cy', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('cy', function (_name: string, i: number) {
         return firstMarkerY + i * ySpacing;
       })
-      .attr('r', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('r', function (_name: string, _i: number) {
         return markerRadius;
       })
-      .style('fill', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .style('fill', function (_name: string, i: number) {
         return pieInfo.dataColor[i];
       });
 
@@ -291,21 +282,23 @@ function renderLegend(
       .enter()
       .append('text')
       .attr('x', firstLabelX)
-      .attr('y', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('y', function (_name: string, i: number) {
         return firstLabelY + i * ySpacing;
       })
-      .text(function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .text(function (name: string, _i: number) {
         return name;
       })
       .style('alignment-baseline', 'middle')
       .attr('class', 'tracker-legend-label');
 
-    nameLabels.style('fill', function (name: string, i: number) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    nameLabels.style('fill', function (_name: string, i: number) {
       return pieInfo.dataColor[i];
     });
   } else if (pieInfo.legendOrientation === 'horizontal') {
     let currRenderPosX = 0.0;
-    const currRenderPosX2 = 0.0;
 
     // points
     currRenderPosX = 0.0;
@@ -314,7 +307,8 @@ function renderLegend(
       .data(names)
       .enter()
       .append('circle')
-      .attr('cx', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('cx', function (_name: string, i: number) {
         if (i === 0) {
           currRenderPosX = firstMarkerX + markerWidth / 2.0;
         } else {
@@ -324,10 +318,12 @@ function renderLegend(
         return currRenderPosX;
       })
       .attr('cy', firstMarkerY)
-      .attr('r', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('r', function (_name: string, _i: number) {
         return markerRadius;
       })
-      .style('fill', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .style('fill', function (_name: string, i: number) {
         return pieInfo.dataColor[i];
       });
 
@@ -338,7 +334,8 @@ function renderLegend(
       .data(names)
       .enter()
       .append('text')
-      .attr('x', function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .attr('x', function (_name: string, i: number) {
         if (i === 0) {
           currRenderPosX = firstLabelX;
         } else {
@@ -348,20 +345,21 @@ function renderLegend(
         return currRenderPosX;
       })
       .attr('y', firstLabelY)
-      .text(function (name: string, i: number) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .text(function (name: string, _i: number) {
         return name;
       })
       .style('alignment-baseline', 'middle')
       .attr('class', 'tracker-legend-label');
 
-    nameLabels.style('fill', function (name: string, i: number) {
+    nameLabels.style('fill', function (_name: string, i: number) {
       return pieInfo.dataColor[i];
     });
   }
 }
 
 function renderPie(
-  canvas: HTMLElement,
+  _canvas: HTMLElement,
   chartElements: ChartElements,
   renderInfo: RenderInfo,
   pieInfo: PieInfo
@@ -469,9 +467,9 @@ function renderPie(
     .innerRadius(radius * 0.9)
     .outerRadius(radius * 0.9);
 
-  const sectorPaths = sectors
+  sectors
     .append('path')
-    .attr('fill', function (d: any, i: number) {
+    .attr('fill', function (_d: any, i: number) {
       return colorScale(i.toString());
     })
     .attr('d', arc);
@@ -486,7 +484,7 @@ function renderPie(
   }
 
   // label elements
-  const labelElements = sectorsGroup
+  sectorsGroup
     .selectAll('label')
     .data(pie(values))
     .enter()
@@ -508,7 +506,7 @@ function renderPie(
   }
 
   // external label elements
-  const extLabelElements = sectorsGroup
+  sectorsGroup
     .selectAll('extLabel')
     .data(pieValues)
     .enter()
@@ -541,7 +539,6 @@ function renderPie(
   function getPointsForConnectionLines(arcObj: any, i: number) {
     const labelWidth = labelSizes[i].width;
     const extLabelWidth = extLabelSizes[i].width;
-    const labelHidden = isLabelHidden(arcObj);
     const midAngle = getMidAngle(arcObj);
 
     const posLabel = arc.centroid(arcObj); // line insertion in the slice
@@ -584,7 +581,7 @@ function renderPie(
   }
 
   // Add lines between sectors and external labels
-  const lines = sectorsGroup
+  sectorsGroup
     .selectAll('line')
     .data(pieValues)
     .enter()

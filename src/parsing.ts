@@ -7,13 +7,11 @@ import {
   RenderInfo,
   SummaryInfo,
   Margin,
-  GraphType,
   LineInfo,
   PieInfo,
   MonthInfo,
   HeatmapInfo,
   BulletInfo,
-  Dataset,
   CustomDatasetInfo,
   AspectRatio,
 } from './data';

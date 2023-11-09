@@ -1,6 +1,6 @@
 import { RenderInfo, Dataset } from './data';
 import * as d3 from 'd3';
-import { isMoment, Moment } from 'moment';
+import { Moment } from 'moment';
 import * as helper from './helper';
 import jsep from 'jsep';
 import { sprintf } from 'sprintf-js';

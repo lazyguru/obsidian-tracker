@@ -1,15 +1,4 @@
-import {
-  Datasets,
-  DataPoint,
-  RenderInfo,
-  BulletInfo,
-  Dataset,
-  Size,
-  Transform,
-  ChartElements,
-  GraphType,
-  ValueType,
-} from './data';
+import { RenderInfo, BulletInfo, Dataset, ChartElements } from './data';
 import * as helper from './helper';
 import * as d3 from 'd3';
 import * as expr from './expr';
@@ -213,7 +202,7 @@ function renderAxis(
   chartElements: ChartElements,
   renderInfo: RenderInfo,
   bulletInfo: BulletInfo,
-  dataset: Dataset
+  _dataset: Dataset
 ) {
   // console.log("renderAxis");
   // console.log(chartElements);
@@ -227,7 +216,7 @@ function renderAxis(
 
   const tickLength = 6;
   const valueUnit = bulletInfo.valueUnit;
-  const tickFormatFn: any = function (value: any) {
+  const tickFormatFn = function (value: d3.NumberValue) {
     if (valueUnit && valueUnit.endsWith('%')) {
       return d3.tickFormat(0, lastRange, 7)(value) + ' %';
     }
@@ -254,13 +243,11 @@ function renderAxis(
       .attr('class', 'tracker-axis');
     chartElements['axis'] = axis;
 
-    const axisLine = axis.selectAll('path').style('stroke', 'none');
+    axis.selectAll('path').style('stroke', 'none');
 
-    const axisTicks = axis.selectAll('line');
+    axis.selectAll('line');
 
-    const axisTickLabels = axis
-      .selectAll('text')
-      .attr('class', 'tracker-tick-label');
+    axis.selectAll('text').attr('class', 'tracker-tick-label');
 
     axis.attr('width', renderInfo.dataAreaSize.width + maxTickLabelSize.width);
     axis.attr('height', tickLength + maxTickLabelSize.height);
@@ -328,7 +315,7 @@ function renderBackPanel(
   chartElements: ChartElements,
   renderInfo: RenderInfo,
   bulletInfo: BulletInfo,
-  dataset: Dataset
+  _dataset: Dataset
 ) {
   // console.log("renderBackPanel");
   // console.log(dataset);
@@ -352,7 +339,7 @@ function renderBackPanel(
   }
 
   if (bulletInfo.orientation === 'horizontal') {
-    const panel = chartElements.dataArea
+    chartElements.dataArea
       .selectAll('backPanel')
       .data(data)
       .enter()
@@ -371,12 +358,12 @@ function renderBackPanel(
         return d.color;
       });
   } else if (bulletInfo.orientation === 'vertical') {
-    const panel = chartElements.dataArea
+    chartElements.dataArea
       .selectAll('backPanel')
       .data(data)
       .enter()
       .append('rect')
-      .attr('x', function (d: any, i: number) {
+      .attr('x', function (_d: any, _i: number) {
         return 0;
       })
       .attr('y', function (d: any) {
@@ -399,7 +386,7 @@ function renderBar(
   chartElements: ChartElements,
   renderInfo: RenderInfo,
   bulletInfo: BulletInfo,
-  dataset: Dataset
+  _dataset: Dataset
 ) {
   // console.log("renderBar");
   // console.log(dataset);
@@ -423,7 +410,7 @@ function renderBar(
 
   if (bulletInfo.orientation === 'horizontal') {
     const barWidth = renderInfo.dataAreaSize.height / 3;
-    const bar = chartElements.dataArea
+    chartElements.dataArea
       .append('rect')
       .attr('x', scale(0))
       .attr('y', barWidth)
@@ -432,7 +419,7 @@ function renderBar(
       .style('fill', valueColor);
   } else if (bulletInfo.orientation === 'vertical') {
     const barWidth = renderInfo.dataAreaSize.width / 3;
-    const bar = chartElements.dataArea
+    chartElements.dataArea
       .append('rect')
       .attr('x', barWidth)
       .attr('y', Math.floor(scale(actualValue)))
@@ -450,7 +437,7 @@ function renderMark(
   chartElements: ChartElements,
   renderInfo: RenderInfo,
   bulletInfo: BulletInfo,
-  dataset: Dataset
+  _dataset: Dataset
 ) {
   // console.log("renderMark");
   // console.log(dataset);
@@ -467,7 +454,7 @@ function renderMark(
 
   if (bulletInfo.orientation === 'horizontal') {
     const markerLength = (renderInfo.dataAreaSize.height * 2) / 3;
-    const marker = chartElements.dataArea
+    chartElements.dataArea
       .append('rect')
       .attr('x', scale(markerValue) - 1.5)
       .attr('y', markerLength / 4)
@@ -476,7 +463,7 @@ function renderMark(
       .style('fill', markerColor);
   } else if (bulletInfo.orientation === 'vertical') {
     const markerLength = (renderInfo.dataAreaSize.width * 2) / 3;
-    const marker = chartElements.dataArea
+    chartElements.dataArea
       .append('rect')
       .attr('x', markerLength / 4)
       .attr('y', scale(markerValue) - 1.5)

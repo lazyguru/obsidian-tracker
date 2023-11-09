@@ -1,19 +1,16 @@
-import { App, CachedMetadata, getLinkpath, Plugin } from 'obsidian';
+import { App, CachedMetadata, Plugin } from 'obsidian';
 import { MarkdownPostProcessorContext, MarkdownView, Editor } from 'obsidian';
 import { TFile, TFolder, normalizePath } from 'obsidian';
 import * as rendering from './rendering';
 import { getRenderInfoFromYaml } from './parsing';
 import {
   Datasets,
-  Query,
-  QueryValuePair,
   GraphType,
   SearchType,
   TableData,
   RenderInfo,
   XValueMap,
   DataMap,
-  CustomDatasetInfo,
   CollectingProcessInfo,
   ValueType,
 } from './data';

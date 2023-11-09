@@ -2,7 +2,8 @@ import * as d3 from 'd3';
 import { RenderInfo, SummaryInfo } from './data';
 import * as expr from './expr';
 
-function checkSummaryTemplateValid(summaryTemplate: string): boolean {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function checkSummaryTemplateValid(_summaryTemplate: string): boolean {
   return true;
 }
 
