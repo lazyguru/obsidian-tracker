@@ -1,7 +1,7 @@
 import 'colors';
 import * as dotenv from 'dotenv';
 import * as tsNode from 'ts-node';
-import { cacheEnv, divider } from '../test-utils';
+import { divider } from '../test-utils';
 
 tsNode.register();
 dotenv.config();
@@ -12,7 +12,7 @@ const globalSetup = async (): Promise<void> => {
   console.log('\n\nRun e2e Tests');
   console.log(`${divider.cyan}`);
   console.log('Setup...'.italic);
-  origEnv = cacheEnv();
+  origEnv = process.env;
 };
 
 export default globalSetup;
