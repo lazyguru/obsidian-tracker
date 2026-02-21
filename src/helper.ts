@@ -24,7 +24,7 @@ function makeTimeFormat() {
                 if (fmtSec !== "") {
                     fmt += `:${fmtSec}`;
                 }
-                if (fmtHour.contains("h")) {
+                if (fmtHour.includes("h")) {
                     fmt += " a";
                 }
                 timeFormat.push(fmt);
@@ -330,6 +330,32 @@ export function trimByChar(str: string, char: string) {
     return first === -1 && last === -1
         ? str
         : str.substring(first, str.length - last);
+}
+
+/**
+ * Convert day abbreviation or full name to day index (0-6)
+ * @param dayAbbr - Day abbreviation or full name: "Sun"/"Sunday", "Mon"/"Monday", etc.
+ * @returns Day index (0=Sunday, 1=Monday, ..., 6=Saturday)
+ */
+export function getDayIndex(dayAbbr: string): number {
+    const dayMap: { [key: string]: number } = {
+        "sun": 0,
+        "sunday": 0,
+        "mon": 1,
+        "monday": 1,
+        "tue": 2,
+        "tuesday": 2,
+        "wed": 3,
+        "wednesday": 3,
+        "thu": 4,
+        "thursday": 4,
+        "fri": 5,
+        "friday": 5,
+        "sat": 6,
+        "saturday": 6
+    };
+    const normalized = dayAbbr.toLowerCase().trim();
+    return dayMap[normalized] !== undefined ? dayMap[normalized] : 0; // Default to Sunday
 }
 
 export function replaceImgTagByAlt(input: string) {
